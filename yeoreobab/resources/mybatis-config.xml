@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-config.dtd">
+    
+<configuration>
+	
+	<settings>
+		<!-- MyBatis에서 쿼리에 맵핑되는 파라미터에 null이 들어가면 에러 발생
+		value에 전달할 값 null이면 처리할 값을 지정
+		그 값으로 DB에 값 세팅 -->
+		<setting name="jdbcTypeForNull" value="NULL"/>
+		
+		<!-- 데이터베이스로부터의 응답을 얼마나 기다릴지 판단하는 타임아웃 설정(ms) -->
+		<setting name="defaultStatementTimeout" value="3000"/>
+		
+		<!-- 언더스코어 표기법을 카멜케이스로 자동 변환하는 설정을 true로 지정 -->
+		<!-- reg_date -> regDate -->
+		<setting name="mapUnderscoreToCamelCase" value="true"/>
+	</settings>
+	
+	<typeAliases>
+		<typeAlias type="com.spring.myweb.command.FreeBoardVO" alias="board"/>
+		<typeAlias type="com.spring.myweb.command.UserVO" alias="user"/>
+		<typeAlias type="com.spring.myweb.command.ReplyVO" alias="reply"/>
+			<!-- com.``````을 board로 변환 -->
+	</typeAliases>
+	
+	<!-- 인터페이스 mapper 구현체 xml 파일의 경로를 표시하는 태그
+		 SqlSessionFactoryBean을 등록할 때 이미 지정했기 때문에 추가 안해도 된다 
+	<mappers>
+		<mapper resource="classpath:/mappers/*Mapper.xml"/>
+	</mappers>
+	-->
+</configuration>    
+    
+  
