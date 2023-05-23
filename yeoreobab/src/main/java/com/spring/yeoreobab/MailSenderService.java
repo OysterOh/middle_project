@@ -32,7 +32,7 @@ public class MailSenderService {
 	//회원 가입시 사용할 이메일 양식
 	public String joinEmail(String email) {
 		authNum = makeRandomNumber();
-		String setFrom = "jungwon2433@naver.com";	//email-config에서 설정한 발신용 이메일 주소
+		String setFrom = "yeoreobab@gmail.com";	//email-config에서 설정한 발신용 이메일 주소
 		String toMail = email;	//수신받을 이메일(가입하고자 하는 사람의 이메일)
 		String title = "여러밥에 가입해주셔서 감사합니다!";	//이메일 제목
 		String content = "홈페이지를 방문해 주셔서 감사합니다." 
